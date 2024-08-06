@@ -9,3 +9,7 @@ https://github.com/thawk105/ccbench <br>
 Upload the folder of fafnir into CCBench. Then proceed to follow the installation and use within the CCBench README.md. <br>
 Further Instructions are within the README.md of fafnir folder<br>
 ---
+## Original File of FafnirDT
+The original file within CCBench can be found at: <br>
+https://github.com/Ryuichi-Yamafuji-Lun/ccbench<br>
+---
