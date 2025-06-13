@@ -42,15 +42,14 @@ FafnirDT introduces:
 
 ## 📈 Key Results
 
-| Scenario                                      | 2PLSF Throughput         | FafnirDT Throughput       | Notes                                                      |
-|----------------------------------------------|---------------------------|----------------------------|------------------------------------------------------------|
-| **Normal Workload** (short-only txns)        | 1.000x                    | **0.9535x**                | FafnirDT incurs ~4.65% overhead vs. 2PLSF                   |
-| **Delayed Threads** (10 sec long txns)       | **0 TPS**                 | **~3,700 TPS**             | 2PLSF starves; FafnirDT sustains execution                 |
-| **Thread Scaling (8 → 64)** under delay      | N/A (0 TPS base)          | **~6,100 TPS → ~3,700 TPS** | FafnirDT degrades ~39.45%, but throughput remains >0 TPS  |
+| Scenario                                  | 2PLSF Throughput | FafnirDT Throughput     | Notes                                                               |
+|------------------------------------------|------------------|--------------------------|---------------------------------------------------------------------|
+| **Normal Workload** (short-only txns)    | ~470K TPS        | **~450K TPS**            | ~4.65% overhead vs. 2PLSF                                           |
+| **Delayed Threads** (10s long txns)      | **0 TPS**        | **~500K–610K TPS**       | 2PLSF stalls; FafnirDT sustains full throughput                     |
+| **Thread Scaling (8 → 64)** under delay  | **0 TPS**        | **~610K → ~370K TPS**    | Throughput degrades ~39.45%, but remains operational                |
 
-✅ FafnirDT eliminates starvation  
-✅ Graceful degradation when scaling under contention  
-✅ Minimal overhead in low-contention scenarios
+📌 Benchmarks: YCSB Write-Only, 10K tuples  
+📌 Hardware: Dual Xeon Gold 6130, 512GB RAM, using CCBench
 
 ---
 
